@@ -278,21 +278,6 @@ d3.csv("https://raw.githubusercontent.com/sejeong7/singleregression/main/single_
             .attr("dy", "0.35em")
             .text(y.tickFormat(5, "s"));
 
-            .on("mouseover", function(event, d) {
-                d3.select("#tooltip")
-                        .style("left", event.pageX + "px")
-                        .style("top", event.pageY + "px")
-                    .select("#value")
-                        // .html("<p>" + String(d[1]) + "</p>"); // access data by indexing array value
-                        .html("<p>" + String(d.single_regression) + "</p>"); // access data by object property
-
-                d3.select("#tooltip")
-                    .classed("hidden", false);
-            })
-            .on("mouseout", function() {
-                d3.select("#tooltip")
-                    .classed("hidden", true);
-            })
 
 
 });
