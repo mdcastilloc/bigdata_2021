@@ -18,6 +18,9 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
 
+        <!-- two columns -->
+        <link href="twocolumns.css" rel="stylesheet" type="text/css" />
+
         <style>
         #tooltip {
 				position: absolute;
@@ -54,17 +57,24 @@
             </div>
         </header>
 
-	    
-	<iframe id="theFrame" src="https://surbhi5ag.github.io/single_regression/" style="width:100%;" frameborder="0"; height=900>
-        </iframe>
-	    
-	<iframe id="theFrame" src="https://surbhi5ag.github.io/multiple_regression/" style="width:100%;" frameborder="0"; height=900>
-        </iframe>	    
-	    
-		    
+
+
         <!-- Post Content-->
         <article class="mb-4">
-           
+
+          <div class="leftcol">
+             <iframe id="theFrame" src="https://surbhi5ag.github.io/single_regression/" name="single"
+             style="width:100%;" frameborder="0"; height=900>
+                </iframe></div>
+
+          <div class="mainclass">
+             <iframe id="theFrame" src="https://surbhi5ag.github.io/multiple_regression/" name="double"
+             style="width:100%;" frameborder="0"; height=900>
+                </iframe></div>
+
+                <div class="footer">Single and Double Regression results</div>
+
+
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
@@ -74,7 +84,7 @@
                       <h3 class="section-heading">OUR PREMISE</h3>
                       <p id="text1">As a socially-constructed term, “risk” (and migration risk) has myriad interpretations. Looking for simplicity and feasibility of actions, <b>researchers and practitioners often narrow their scope to an unproductive extent.</b> We have all been there. However, <b>a complex concept requires complex interpretations.</b> A multidimensional issue requires cross-disciplinary action. For good or worse, this is the floor on which we are all standing when studying risk.<br>
    										 <br><br>
-                       If, by any chance, you are thinking something along the lines of: <test style="color:blue">“It is easy to talk about such convoluted concepts but much harder to put into practice”.</test>
+                       If, by any chance, you are thinking something along the lines of: <i>“It is easy to talk about such convoluted concepts but much harder to put into practice.”</i>
                          We certainly agree. Nonetheless, we still want to get the ball rolling on flipping the switch, because, in practice, not doing so often leads to fragmented action and to a lack of cooperation between disciplines, institutional sectors, and groups of people. To us, that is significantly more unproductive and detrimental to at-risk populations. Such a grounded issue has been raised by many experts in the area. We just want to put it into practice.<br>
                        <br><br>
                        <b>This is an exercise to prove a bigger point,</b> a diagrammatic attempt to push for us to reconsider how we conceive multidimensional concepts like migration risk. Interpretations that translate to action depend on the eye of the beholder, and we believe that the eye can do much more.<br>
@@ -86,14 +96,6 @@
                          alt="Mom walks with her kid in the back" /></a>
                          <span class="caption text-muted">The impact of climate change on migration have been underestimated in some areas </span>
 
-                      <!--
-                       </div>
-             					 <div class="row">
-             						<div class="col-10"> -->
-
-			    
-			<div id="my_dataviz"></div>
-    
                        <!-- second section -->
                         <h2 class="section-heading">OUR METHODS</h2>
                         <p id="text1">As you will see in the diagram below, <b>this exercise equates migration risk with an individual’s intention to migrate to another country.</b> We used data from a World Food Programme survey on migration in the Northern Triangle (n= 4,998), which includes responses from El Salvador (n= 1,703), Honduras (n= 1,565), and Guatemala (n= 1,730) (WFP, 2021). To work with some of the multiple dimensions of migration risk, we selected variables in eight different categories within those data, including <test style="color:#ec1c24">food security</test>, <test style="color:#eb008b">economic security</test>, <test style="color:#90278e">housing,</test> <test style="color:#0087a4">disasters</test>,
@@ -101,7 +103,7 @@
     										<br><br>
                         Our beholder has two eyes. The first is the one that assesses individual relationships to a single outcome (i.e. Is there an association between X and Y?). Once more, the outcome is an individual’s intention to migrate to a different country. For this part, we ran simple linear regressions between all 42 variables (or predictors) and the outcome. The second assesses the relationship between the same variables and outcome, except this time they all contribute to the result instead of being evaluated individually (i.e. Is there an association between X and Y, when controlling for A, B, C...?). Here, we used multiple linear regression.<br>
                         <br><br>
-                        
+
                         <! -- INSERT ILLUSTRATION -->
 
                         <header href="#!"><img class="masthead" style="background-image: url('assets/img/mig.jpg')">
@@ -139,9 +141,9 @@
                         <a href="#!"><img class="img-fluid" src="assets/img/jose_twp.jpg"
                           alt="José Ceto ' Guatemalan migrant after unsuccesfully entering the United States.'" /></a>
                         <span class="caption text-muted">Migrantion attempts do not always result in succesfully entering their country of destination. </span>
-                        
-                      
-                
+
+
+
                         <!-- insert chart
                         <span class="caption text-muted">Main reasons why people in El Salvador, Guatemala and Honduras try to migrate according to over 1,600 survey responses. </span>
                         <a href="#!"><img class="img-fluid" src="assets/img/bar_mig_ext_motivo.png"
