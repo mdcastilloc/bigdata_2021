@@ -1,0 +1,43 @@
+category,variable,single_regression,strength,variable_name_caps,p_val,variable_name
+infrastructure,pct_fuente_agua_hh,0,INSIGNIFICANT,RUNNING WATER,insignificant,Running water
+infrastructure,pct_electricity_yes,1,LOW,ELECTRICITY,< 0.05,Electricity
+infrastructure,pct_cooking_fuel_gas_elec,3,HIGH,COOKING GAS/ELECTRICITY,< 0.001,Cooking gas/electricity
+infrastructure,pct_desechos_solidos,0,INSIGNIFICANT,WASTE COLLECTION,insignificant,Waste collection
+infrastructure,pct_servicio_sanitatio_priv,2,MODERATE,SEWAGE,< 0.01,Sewage
+food_security,avg_rcsi_less_qlty,0,INSIGNIFICANT,FOOD QUALITY (7 DAYS),insignificant,Food quality (7 days)
+food_security,avg_rcsi_borrow,1,LOW,BORROWED FOOD (7 DAYS),< 0.05,Borrowed food (7 days)
+food_security,avg_rcsi_meal_adult,0,INSIGNIFICANT,REDUCED FOOD AMOUNT (7 DAYS),insignificant,Reduced food amount (7 days)
+food_security,avg_rcsi_meal_size,0,INSIGNIFICANT,REDUCED FOOD PORTION (7 DAYS),insignificant,Reduced food portion (7 days)
+food_security,avg_rcsi_meal_nb,0,INSIGNIFICANT,REDUCED MEALS PER DAY (7 DAYS),insignificant,Reduced meals per day (7 days)
+food_security,avg_rcsi_no_eat,0,INSIGNIFICANT,NO FOOD DAYS (7 DAYS),insignificant,No food days (7 days)
+economic_security,pct_lcsi_informal_job,0,INSIGNIFICANT,JOB INFORMALITY,insignificant,Job informality
+economic_security,pct_income_exp_food_insufficient,0,INSIGNIFICANT,"INSUFFICIENT INCOME (FOOD, 30 DAYS)",insignificant,"Insufficient income (food, 30 days)"
+economic_security,pct_income_exp_other_insufficient,0,INSIGNIFICANT,"INSUFFICIENT INCOME (OTHER, 30 DAYS)",insignificant,"Insufficient income (other, 30 days)"
+economic_security,pct_income_insufficiency_6m,0,INSIGNIFICANT,INSUFFICIENT INCOME (6 MONTHS),insignificant,Insufficient income (6 months)
+economic_security,pct_debt_yes,0,INSIGNIFICANT,DEBT,insignificant,Debt
+economic_security,pct_programas_asistencia_gob,3,HIGH,GOVERNMENT AID,< 0.001,Government aid
+economic_security,pct_programas_asistencia,0,INSIGNIFICANT,AID (OTHER),insignificant,Aid (other)
+housing,pct_makeshift_housing,0,INSIGNIFICANT,MAKESHIFT HOUSING,insignificant,Makeshift housing
+housing,pct_vivienda_propiedad_own,3,VERY HIGH,HOUSING TENURE,< 0.001,Housing tenure
+housing,pct_vivienda_propiedad_own_female,0,INSIGNIFICANT,FEMALE-OWNED HOUSING,insignificant,Female-owned housing
+hazards,pct_shocks_yes,0,INSIGNIFICANT,DISASTERS,insignificant,Disasters
+hazards,pct_inseguridad_comunidad_yes,2,MODERATE,INSECURITY,< 0.01,Insecurity
+hazards,pct_nivel_violencia_increased,0,INSIGNIFICANT,VIOLENCE,insignificant,Violence
+hazards,pct_mdv_imp_covid_job,0,INSIGNIFICANT,COVID-19 (JOB LOSS),insignificant,COVID-19 (job loss)
+hazards,pct_mdv_imp_covid_ing_decreased,2,INSIGNIFICANT,COVID-19 (LESS INCOME),< 0.01,COVID-19 (less income)
+hazards,pct_mdv_imp_covid_ing_loss,0,INSIGNIFICANT,COVID-19 (INCOME LOSS),insignificant,COVID-19 (income loss)
+perceptions,pct_level_satisfaction_area_no,0,INSIGNIFICANT,LIVING AREA (DISSATISFIED),insignificant,Living area (dissatisfied)
+perceptions,pct_econ_condition_worse,0,INSIGNIFICANT,ECONOMIC CONDITIONS,insignificant,Economic conditions
+perceptions,pct_living_condition_worse,0,INSIGNIFICANT,LIVING STANDAD (DETERIORATED),insignificant,Living standard (deteriorated)
+perceptions,pct_level_satisfaction_living_no,2,HIGH,LIVING STANDARD (DISSATISFIED),< 0.01,Living standard (dissatisfied)
+perceptions,pct_income_satisfaction_struggling,0,INSIGNIFICANT,INCOME (STRUGGLING),insignificant,Income (struggling)
+perceptions,pct_income_satisfaction_critical,0,INSIGNIFICANT,INCOME (CRITICAL),insignificant,Income (critical)
+perceptions,pct_children_op_no,3,HIGH,CHILREN OPPORTUNITIES,< 0.001,Chilren opportunities
+perceptions,pct_confidence_election_no,3,HIGH,CONFIDENCE IN ELECTIONS,< 0.001,Confidence in elections
+perceptions,pct_mig_ext_opinion_good,3,HIGH,MIGRATION ABROAD GOOD,< 0.001,Migration abroad good
+demographic,avg_rsp_age,0,INSIGNIFICANT,AGE,insignificant,Age
+demographic,pct_female,0,INSIGNIFICANT,SEX,insignificant,Sex
+demographic,avg_hh_size,0,INSIGNIFICANT,HOUSEHOLD SIZE,insignificant,Household size
+demographic,pct_vulnerability_longterm,0,INSIGNIFICANT,DISABILITIES,insignificant,Disabilities
+geographic,pct_rural,0,INSIGNIFICANT,RURAL,insignificant,Rural
+geographic,pct_rsp_mun,0,INSIGNIFICANT,POPULATION (MUNICIPALITY),insignificant,Population (municipality)
