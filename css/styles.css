@@ -70,14 +70,38 @@
   box-sizing: border-box;
 }
 
+a:link {
+  color: gray;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: gray;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
   }
 }
 
+
 body {
-  background-color: lightblue;
   margin: 0;
   font-family: var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
@@ -89,6 +113,58 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
+.wrap {
+    width: 400px;
+    height: 600px;
+    padding: 0;
+    overflow: hidden;
+}
+.frame {
+    width: 1200px;
+    height: 1800px;
+    border: 0;
+    -ms-transform: scale(0.25);
+    -moz-transform: scale(0.25);
+    -o-transform: scale(0.25);
+    -webkit-transform: scale(0.25);
+    transform: scale(0.25);
+
+    -ms-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+$('.carousel').carousel({
+  interval: 2000
+})
+
+.su-youtube {
+  margin: 0 auto;
+  display: block;
+}
+
+.leftcol
+       {
+        width: 300px;
+        float: left;
+        margin­left: 0px;
+        padding: 5px;
+       }
+
+       .column {
+         float: left;
+         width: 50%;
+       }
+
+       /* Clear floats after the columns */
+       .row:after {
+         content: "";
+         display: table;
+         clear: both;
+       }
 
 hr {
   margin: 1rem 0;
@@ -7465,7 +7541,7 @@ textarea.form-control-lg {
   color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
 }
 
-.text-black {
+.text-white {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-black-rgb), var(--bs-text-opacity)) !important;
 }
