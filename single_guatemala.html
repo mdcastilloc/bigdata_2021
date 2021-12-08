@@ -1,0 +1,150 @@
+<!-- Code from d3-graph-gallery.com -->
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v7.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+
+
+<script>
+
+
+// set the dimensions and margins of the graph
+const margin = {top: 0, right: 150, bottom: 0, left: 150},
+    width = 860 - margin.left - margin.right,
+    height = 860 - margin.top - margin.bottom,
+
+    innerRadius = 90,
+    outerRadius = Math.min(width, height) / 2;   // the outerRadius goes from the middle of the SVG area to the border
+
+// append the svg object
+const svg = d3.select("#my_dataviz")
+  .append("svg")
+  .attr("viewBox", [0, 0, 900, 900])
+
+  .append("g")
+    .attr("transform", `translate(${width/2+margin.left}, ${height/2+margin.top})`);
+
+//read data
+d3.csv("https://raw.githubusercontent.com/mdcastilloc/bigdata_2021/main/single_guatemala.csv").then( function(data) {
+
+//add colour Scales
+  const colourScale = d3.scaleOrdinal()
+                        .domain(data, d => d.category)
+                        .range(["#ffdd00", "#fbb615", "#f6921e", "#ec1c24", "#eb008b", "#90278e", "#0087a4", "#d6de23"])
+
+  // Scales
+  const x = d3.scaleBand()
+      .range([0, 2 * Math.PI])    // X axis goes from 0 to 2pi = all around the circle. If I stop at 1Pi, it will be around a half circle
+      .align(0)                  // This does nothing
+      .domain(data.map(d => d.variable_name)); // The domain of the X axis is the list of states.
+  const y = d3.scaleRadial()
+      .range([innerRadius, outerRadius])   // Domain will be define later.
+      .domain([0, 3]); // Domain of Y is from 0 to the max seen in the data
+
+//add circles
+      var yAxis = svg.append("g")
+          .attr("text-anchor", "middle");
+
+      var yTick = yAxis
+                .selectAll("g")
+                .data(y.ticks(3).slice(1))
+                .enter().append("g");
+
+              yTick.append("circle")
+                  .attr("fill", "none")
+                  .attr("stroke-width", "2px")
+                  .attr("stroke", "#000")
+                  .attr("opacity", 0.1)
+                  .attr("r", y);
+
+    // create a tooltip
+                    var Tooltip = d3.select("body")
+                      .append("div")
+                      .style("opacity", 0)
+                      .attr("class", "tooltip")
+                      .style("position", "absolute")
+                      .style("background-color", "white")
+                      .style("border", "solid")
+                      .style("border-width", "2px")
+                      .style("border-radius", "5px")
+                      .style("padding", "5px")
+
+  // Three function that change the tooltip when user hover / move / leave a cell
+                      var mouseover = function(event, d) {
+                        Tooltip
+                          .style("opacity", 1)
+                          .html("The strength of the association between " + d.caps + " and intention to migrate externally is " + d.strength + ". (p-value : " + d.p_val + ")")
+                        d3.select(this)
+                          .style("stroke", "black")
+                          .style("opacity", 1)
+
+                        }
+                        var mousemove = function(event, d) {
+                          Tooltip
+
+                          .style("left", event.pageX + 40 + "px")
+                          .style("top", event.pageY + "px")
+
+                        }
+                        var mouseleave = function(d) {
+                          Tooltip
+                            .style("opacity", 0)
+                          d3.select(this)
+                            .style("stroke", "none")
+                            .style("opacity", 0.8)
+                        }
+
+
+  // Add the bars
+  svg.append("g")
+    .selectAll("path")
+    .data(data)
+    .join("path")
+      .attr("fill", d =>colourScale(d.category))
+      .attr("d", d3.arc()     // imagine your doing a part of a donut plot
+          .innerRadius(innerRadius)
+          .outerRadius(d => y(d['single_regression'])+4)
+          .startAngle(d => x(d.variable_name))
+          .endAngle(d => x(d.variable_name) + x.bandwidth())
+          .padAngle(0.01)
+          .padRadius(innerRadius))
+          .on("mouseover", mouseover)
+          .on("mousemove", mousemove)
+          .on("mouseleave", mouseleave)
+
+  // Add the labels
+  svg.append("g")
+      .selectAll("g")
+      .data(data)
+      .join("g")
+        .attr("text-anchor", function(d) { return (x(d.variable_name) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) < Math.PI ? "end" : "start"; })
+        .attr("transform", function(d) { return "rotate(" + ((x(d.variable_name) + x.bandwidth() / 2) * 180 / Math.PI - 90) + ")"+"translate(" + (285) + ",0)"; })
+      .append("text")
+        .text(function(d){return(d.variable_name)})
+        .attr("transform", function(d) { return (x(d.variable_name) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) < Math.PI ? "rotate(180)" : "rotate(0)"; })
+        .style("font-size", "11px")
+        .attr("alignment-baseline", "middle")
+
+//circular labels
+        yTick.append("text")
+            .attr("y", function(d) { return -y(d); })
+            .attr("dy", "0.35em")
+            .attr("fill", "none")
+            .attr("stroke", "#fff")
+            .attr("stroke-width", 5)
+            .text(y.tickFormat(5, "s"));
+
+        yTick.append("text")
+            .attr("y", function(d) { return -y(d); })
+            .attr("dy", "0.35em")
+            .text(y.tickFormat(5, "s"));
+
+});
+
+
+</script>
